@@ -47,7 +47,7 @@ class Solution:
         if endWord not in wordList:
             return 0
 
-        deq = collections.deque([[beginWord, 1]])
+        deq = collections.deque([[beginWord, 1]])   
 
         while deq:
             word, length = deq.popleft()

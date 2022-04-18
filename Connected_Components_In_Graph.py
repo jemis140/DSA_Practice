@@ -1,6 +1,7 @@
 #Most Frequent Amazon Asked question
+from collections import defaultdict
 class Solution:
-    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+    def countComponents(self, n, edges):
         
         def dfsUtil(v,visited, graph):
             visited[v] = True
@@ -24,3 +25,9 @@ class Solution:
                 dfsUtil(i,visited, graph)
                 count +=1
         return count
+
+s = Solution()
+edges = [[0,1], [1,2], [3,4]]
+n = 5
+
+print(s.countComponents(n, edges))

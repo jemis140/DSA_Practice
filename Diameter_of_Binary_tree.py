@@ -1,3 +1,4 @@
+#Important
 class Node:
 
     # Constructor to create a new node
@@ -5,22 +6,6 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
-
-    def insert(self, data):
-
-        if self.data:
-            if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)
-                else:
-                    self.left.insert(data)
-            elif data > self.data:
-                if self.right is None:
-                    self.right = Node(data)
-                else:
-                    self.right.insert(data)
-        else:
-            self.data = data
 
 class Solution:
     def diameterOfBinaryTree(self, root):
@@ -47,21 +32,12 @@ class Solution:
         return diameter
 
 
-root = Node(4)
 
-root.insert(5)
-root.insert(1)
-root.insert(2)
-root.insert(7)
-root.insert(0)
-root.insert(-1)
-root.insert(8)
-
-
-
-
-
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)   
 
 s1 = Solution()
-
 print(s1.diameterOfBinaryTree(root))
